@@ -10,7 +10,7 @@ axiom_helper = AxiomHelper()
 class EventData(BaseModel):
   data: Union[Dict, List[Dict]]
 
-@app.post("/ingest/event/")
+@app.post("/ingest/event")
 async def ingest_event(event_data: EventData):
   try:
     data_to_send = event_data.data if isinstance(event_data.data, list) else [event_data.data]
