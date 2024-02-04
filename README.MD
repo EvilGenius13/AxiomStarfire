@@ -1,5 +1,5 @@
 # Axiom StarFire
-[Docker Image Size (tag)](https://img.shields.io/docker/image-size/evilgenius13/axiomstarfire/latest?logo=docker)
+![Docker Image Size (tag)](https://img.shields.io/docker/image-size/evilgenius13/axiomstarfire/latest?logo=docker)
 
 A lightweight, fast way to send data from your server to axiom for logging.
 
