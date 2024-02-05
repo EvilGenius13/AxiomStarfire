@@ -5,6 +5,6 @@ steps:
           image: "docker"
           commands:
             - "docker build -t evilgenius13/axiomstarfire:latest ."
-            - "docker push evilgenius13/axiomstarfire:latest"
+            # - "docker push evilgenius13/axiomstarfire:latest"
           volumes:
             - "/var/run/docker.sock:/var/run/docker.sock"
