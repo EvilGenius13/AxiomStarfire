@@ -8,7 +8,6 @@
 #             # - "docker push evilgenius13/axiomstarfire:latest"
 #           volumes:
 #             - "/var/run/docker.sock:/var/run/docker.sock"
-
 steps:
   - label: "Build Docker Image"
     plugins:
@@ -16,4 +15,5 @@ steps:
           image: "docker"
           privileged: true
           commands:
-            - "docker build -t my-image:latest ."
+            # - "docker build -t my-image:latest ."
+            - "docker run hello-world"
