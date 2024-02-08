@@ -16,4 +16,5 @@ async def ingest_event(event_data: EventData):
     await axiom_helper.send_event(data_to_send)
     return {"message": "Data ingested successfully!"}
   except Exception as e:
+    await axiom_helper.send_event([{ "error": str(e)}])
     raise HTTPException(status_code=500, detail=str(e))
