@@ -15,5 +15,10 @@ steps:
           image: "docker"
           privileged: true
           commands:
-            # - "docker build -t my-image:latest ."
+            - |
+              # Wait for Docker daemon to be ready
+              until docker info; do
+                echo "Waiting for Docker daemon to start..."
+                sleep 10
+              done
             - "docker run hello-world"
