@@ -1,6 +1,3 @@
 steps:
-  - name: ":python:"
-    command: "py.test"
-    plugins:
-      - docker-compose#v3.7.0:
-          run: app
+  - name: ":docker: Build and Push Docker Image"
+    command: "scripts/build-and-push.sh"
