@@ -8,13 +8,20 @@ A lightweight, fast way to send data from your server to axiom for logging.
 pip3 install -r requirements.txt
 ```
 
+## Environment Variables
+You need the following variables to run the app.
+```bash
+AXIOM_API_KEY=your_api_key
+AXIOM_DATASET=your_dataset
+```
+
 ## Usage
-Local Code
+*Locally*
 ```python
 uvicorn app:app --reload
 ```
 
-Docker
+*Docker*
 ```bash
 docker run -d -p 8000:8000 evilgenius13/axiomstarfire
 ```
