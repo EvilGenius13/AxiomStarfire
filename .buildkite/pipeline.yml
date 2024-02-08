@@ -12,7 +12,7 @@ steps:
           # environment:
           #   # Ensure DOCKER_LOGIN and DOCKER_PASSWORD are set in your Buildkite environment variables
           #   - "DOCKER_USERNAME=your-docker-hub-username"
-          #   - "DOCKER_PASSWORD=your-docker-hub-password" 
+          #   - "DOCKER_PASSWORD=your-docker-hub-password"
           workdir: "/workdir"
     agents:
       queue: "build queue"
