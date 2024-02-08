@@ -1,5 +1,6 @@
 # Axiom StarFire
 ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/evilgenius13/axiomstarfire/latest?logo=docker)
+[![Build status](https://badge.buildkite.com/6ff6fd6990a44de89a41fb1b93f31efcaf6e6c91545f5f8eab.svg)](https://buildkite.com/timewellspent/dev-build)
 
 A lightweight, fast way to send data from your server to axiom for logging. 
 
