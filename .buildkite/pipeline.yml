@@ -1,24 +1,6 @@
-# steps:
-#   - label: "Build Docker Image"
-#     plugins:
-#       - docker#v3.8.0:
-#           image: "docker"
-#           commands:
-#             - "docker build -t evilgenius13/axiomstarfire:latest ."
-#             # - "docker push evilgenius13/axiomstarfire:latest"
-#           volumes:
-#             - "/var/run/docker.sock:/var/run/docker.sock"
 steps:
-  - label: "Build Docker Image"
-    plugins:
-      - docker#v3.8.0:
-          image: "docker"
-          privileged: true
-          commands:
-            - |
-              # Wait for Docker daemon to be ready
-              until docker info; do
-                echo "Waiting for Docker daemon to start..."
-                sleep 10
-              done
-            - "docker run hello-world"
+  - label: "Run Docker Hello World"
+    command: "docker run hello-world"
+    agents:
+      queue: "your-queue-name"
+
