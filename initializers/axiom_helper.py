@@ -16,5 +16,3 @@ class AxiomHelper:
     
     async def send_event(self, event_data):
         await asyncio.to_thread(self.client.ingest_events, AXIOM_DATASET, event_data)
-
-# TODO: Build container via buildkite
