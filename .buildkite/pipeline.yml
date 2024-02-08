@@ -3,6 +3,7 @@ steps:
     plugins:
       - docker#v3.8.0:
           image: "docker:latest"
+          privileged: true
           mount-buildkite-agent: true
           volumes:
             - "/var/run/docker.sock:/var/run/docker.sock"
