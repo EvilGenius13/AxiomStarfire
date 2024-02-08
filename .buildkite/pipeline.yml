@@ -1,6 +1,18 @@
 steps:
-  - label: "Run Docker Hello World"
-    command: "docker run hello-world"
+  - label: "Build and push Docker image"
+    plugins:
+      - docker#v5.10.0:
+          image: "docker:latest"
+          always-pull: true
+          volumes:
+            - "/var/run/docker.sock:/var/run/docker.sock"
+          commands:
+            - "docker build . -t image:tag"
+            # - "docker push image:tag"
+          # environment:
+          #   # Ensure DOCKER_LOGIN and DOCKER_PASSWORD are set in your Buildkite environment variables
+          #   - "DOCKER_USERNAME=your-docker-hub-username"
+          #   - "DOCKER_PASSWORD=your-docker-hub-password"
+          workdir: "/workdir"
     agents:
-      queue: "your-queue-name"
-
+      queue: "build queue"
