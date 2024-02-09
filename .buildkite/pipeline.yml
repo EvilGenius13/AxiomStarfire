@@ -1,3 +1,22 @@
 steps:
-  - name: ":docker: Build and Push Docker Image"
+  - label: ":hammer: Build and Push"
     command: "scripts/build-and-push.sh"
+
+  - wait
+
+  - label: ":rocket: Deploy"
+    command: "echo 'Add deployment script here'"
+  
+  - wait
+
+  - label: ":discord: Notify on Success"
+    command: "notify-discord-success.sh"
+    if: build.state == "passed"
+    env:
+      DISCORD_WEBHOOK_URL: "$DISCORD_WEBHOOK_URL"
+
+  - label: ":discord: Notify on Failure"
+    command: "notify-discord-failure.sh"
+    if: build.state == "failed"
+    env:
+      DISCORD_WEBHOOK_URL: "$DISCORD_WEBHOOK_URL"
