@@ -11,7 +11,7 @@ steps:
 
   - label: ":large_green_circle: Notify on Success"
     command: "notify-discord-success.sh"
-    if: build.state == "passed"
+    # if: build.state == "passed"
     env:
       DISCORD_WEBHOOK_URL: "$DISCORD_WEBHOOK_URL"
 
