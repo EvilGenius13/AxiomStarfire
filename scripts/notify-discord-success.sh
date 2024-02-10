@@ -2,7 +2,7 @@
 
 # Replace this with your actual webhook URL
 WEBHOOK_URL=$DISCORD_WEBHOOK_URL
-json_data = '{
+json_data='{
      "embeds": [
          {
              "title": "Build Success :white_check_mark:",
@@ -14,5 +14,5 @@ json_data = '{
 
 curl -H "Content-Type: application/json" \
      -X POST \
-     -d ""$json_data \
+     -d "$json_data" \
      $WEBHOOK_URL
