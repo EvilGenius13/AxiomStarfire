@@ -9,14 +9,8 @@ steps:
   
   - wait
 
-  - label: ":discord: Notify on Success"
+  - label: ":large_green_circle: Notify on Success"
     command: "scripts/notify-discord-success.sh"
-    # if: build.state == "passed"
     env:
       DISCORD_WEBHOOK_URL: "$DISCORD_WEBHOOK_URL"
 
-  - label: ":large_orange_circle: Notify on Failure"
-    command: "scripts/notify-discord-failure.sh"
-    if: build.state == "failed"
-    env:
-      DISCORD_WEBHOOK_URL: "$DISCORD_WEBHOOK_URL"
